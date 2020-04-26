@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admin;
 use App\Models\Password_reset;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -24,16 +25,13 @@ class AuthenticationController extends Controller
     public function authentication(Request $request)
     {
         $data = $request->only('email', 'password');
-
+        $password = Hash::make('password');
+        //dd($password);
         if (Auth::attempt(['email' => $data['email'], 'password' => $data['password']])) {
-            try {
-                $user = User::where('email', $data['email'])->firstOrfail();
-                $user->last_login = new \DateTime();
-                $user->save();
+                $admin = Admin::where('email', $data['email'])->firstOrfail();
+                $admin->last_login = new \DateTime();
+                $admin->save();
                 return redirect()->route('dashboard');
-            } catch (\Exception $e) {
-                return redirect()->route('login');
-            }
         }
         return redirect()->route('login');
     }
