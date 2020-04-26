@@ -14,15 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.dashboard');
+Route::get('/', function () {return redirect()->route('dashboard');});
+Route::get('login', 'AuthenticationController@login')->name('login');
+Route::any('logout', 'AuthenticationController@logout')->name('logout');
+Route::post('login', 'AuthenticationController@authentication')->name('authentication');
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('dashboard', function () {
+        return view('pages.dashboard');
+    })->name('dashboard');
+
 });
 
-Route::get('dashboarda', function () {
-    return view('pages.dashboard');
-})->name('dashboard');
-
-Route::any('logout', function () {
-    Auth::logout();
-    return redirect()->route('dashboard');
-})->name('logout');
