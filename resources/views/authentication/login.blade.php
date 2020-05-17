@@ -11,7 +11,7 @@
                                 <div class="account-logo-box">
                                     <div class="text-center">
                                         <a href="index.html">
-                                            <img src="assets/images/logo-dark.png" alt="" height="30">
+                                            <img src="{{asset('assets/images/logo-dark.png')}}" alt="" height="30">
                                         </a>
                                     </div>
                                     <h5 class="text-uppercase mb-1 mt-3 text-center">{{__('Connexion')}}</h5>

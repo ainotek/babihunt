@@ -1,5 +1,4 @@
-@extends('errors::minimal')
+@extends('errors::index')
+@section('content')
 
-@section('title', __('Too Many Requests'))
-@section('code', '429')
-@section('message', __('Too Many Requests'))
+@stop

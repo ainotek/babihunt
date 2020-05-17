@@ -8,13 +8,13 @@
         <meta content="Coderthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <link rel="shortcut icon" href="{{asset('assets/images/favicon.ico')}}">
         <!-- C3 Chart css -->
-        <link href="assets/libs/c3/c3.min.css" rel="stylesheet" type="text/css" />
+        <link href="{{asset('assets/libs/c3/c3.min.css')}}" rel="stylesheet" type="text/css" />
         <!-- App css -->
-        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap-stylesheet" />
-        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css"  id="app-stylesheet" />
+        <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" id="bootstrap-stylesheet" />
+        <link href="{{asset('assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('assets/css/app.min.css')}}" rel="stylesheet" type="text/css"  id="app-stylesheet" />
     </head>
     <body>
         <!-- Begin page -->
@@ -38,13 +38,13 @@
         <!-- /Right-bar -->
         <!-- Right bar overlay-->
         <!-- Vendor js -->
-        <script src="assets/js/vendor.min.js"></script>
+        <script src="{{asset('assets/js/vendor.min.js')}}"></script>
         <!--C3 Chart-->
-        <script src="assets/libs/d3/d3.min.js"></script>
-        <script src="assets/libs/c3/c3.min.js"></script>
-        <script src="assets/libs/echarts/echarts.min.js"></script>
-        <script src="assets/js/pages/dashboard.init.js"></script>
+        <script src="{{asset('assets/libs/d3/d3.min.js')}}"></script>
+        <script src="{{asset('assets/libs/c3/c3.min.js')}}"></script>
+        <script src="{{asset('assets/libs/echarts/echarts.min.js')}}"></script>
+        <script src="{{asset('assets/js/pages/dashboard.init.js')}}"></script>
         <!-- App js -->
-        <script src="assets/js/app.min.js"></script>
+        <script src="{{asset('assets/js/app.min.js')}}"></script>
     </body>
 </html>

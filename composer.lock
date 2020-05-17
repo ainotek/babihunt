@@ -927,7 +927,7 @@
             },
             "require-dev": {
                 "cebe/markdown": "~1.0",
-                "commonmark/commonmark.js": "0.29.1",
+                "commonmark/commonmark.js')}}": "0.29.1",
                 "erusev/parsedown": "~1.0",
                 "ext-json": "*",
                 "github/gfm": "0.29.0",
@@ -4828,11 +4828,11 @@
                     "role": "Contributor"
                 }
             ],
-            "description": "Server side syntax highlighter that supports 185 languages. It's a PHP port of highlight.js",
+            "description": "Server side syntax highlighter that supports 185 languages. It's a PHP port of highlight.js')}}",
             "keywords": [
                 "code",
                 "highlight",
-                "highlight.js",
+                "highlight.js')}}",
                 "highlight.php",
                 "syntax"
             ],

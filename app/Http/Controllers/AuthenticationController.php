@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Admin;
 use App\Models\Password_reset;
 use App\Models\User;
+use App\Services\AuthenticationService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -25,14 +26,9 @@ class AuthenticationController extends Controller
     public function authentication(Request $request)
     {
         $data = $request->only('email', 'password');
-        $password = Hash::make('password');
-        //dd($password);
-        if (Auth::attempt(['email' => $data['email'], 'password' => $data['password']])) {
-                $admin = Admin::where('email', $data['email'])->firstOrfail();
-                $admin->last_login = new \DateTime();
-                $admin->save();
-                return redirect()->route('dashboard');
-        }
+        $isAuth = AuthenticationService::login($data);
+        if($isAuth)
+            return redirect()->route('home');
         return redirect()->route('login');
     }
 
@@ -52,40 +48,13 @@ class AuthenticationController extends Controller
                 "code" => 404,
                 "message" => $e->getMessage()
             ];
-
-            $id = 'transaction id';
-            $date = date('Ymd');
-            $sim = 'cp ou mm en fonction des noms que tu donne au sim';
-            $data = "l'information que tu veux enregistrer en BD";
-            $dataJsonPath = public_path() . '/Json/' . '/' . $sim . '/' . $date . '/';
-            $dateFileName = $id . '.json';
-            if (!is_dir($dataJsonPath)) mkdir($dataJsonPath, 0777, true);
-            $dataJsonFullPath = $dataJsonPath . $dateFileName;
-            file_put_contents($dataJsonFullPath, $data);
-
         }
         return response()->json($response);
     }
 
     public function passwordUpdate(Request $request)
     {
-        $rules = [
-            'token' => 'required',
-            'password' => 'required|confirmed|min:8',
-        ];
-        try {
-            $data = $request->only('token', 'password', 'password_confirmation');
-            $passReset = Password_reset::where('token', $data['token'])->firstOrFail();
-            $user = User::where('email', $passReset['email'])->firstOrFail();
-            $newPassword = Hash::make($data["password"]);
-            $user->password = $newPassword;
-            $user->save();
-            $passReset->delete();
-            $message = __("Mot de passe changé avec succes");
-        } catch (\Exception $e) {
-            $message = __("Mauvais Token");
-        }
-        return response()->json($message);
+
     }
 
     //PROTECTED

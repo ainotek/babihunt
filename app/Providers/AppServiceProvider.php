@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Admin;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
 
@@ -24,10 +25,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->composer(['layouts.topbar', 'layouts.sidebar', 'layouts.rightbar' ],
+        view()->composer(['layouts.topbar', 'layouts.sidebar', 'layouts.rightbar'],
             function ($views){
-                $user = Auth::user();
-                $views->with('user', $user);
-            });
+                $admin = Admin::with('role')->where('id', Auth::user()->id)->first();
+                $views->with('admin', $admin);
+            }
+            );
     }
 }

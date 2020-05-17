@@ -1118,7 +1118,7 @@
                                 <span class="sg-image">
                                   <img
                                       class="center" height="41px"
-                                      src="https://cinetpay.com/images/logo.png"
+                                      src="https://cinetpay.com/images/logo.png')}}"
                                       style="outline-style: none; text-decoration: none; width: 124px; max-width: 100%; clear: both; height: 37px;"
                                       width="124px" /></span>
                                         </td>

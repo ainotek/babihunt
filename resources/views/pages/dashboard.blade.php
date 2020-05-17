@@ -154,7 +154,7 @@
                                     <tbody>
                                     <tr>
                                         <td>
-                                            <img src="assets/images/users/avatar-2.jpg" alt="contact-img" title="contact-img" class="rounded-circle avatar-sm" />
+                                            <img src="{{asset('assets/images/users/avatar-2.jpg')}}" alt="contact-img" title="contact-img" class="rounded-circle avatar-sm" />
                                         </td>
                                         <td>
                                             <h5 class="m-0 font-weight-medium">Tomaslau</h5>
@@ -175,7 +175,7 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <img src="assets/images/users/avatar-3.jpg" alt="contact-img" title="contact-img" class="rounded-circle avatar-sm" />
+                                            <img src="{{asset('assets/images/users/avatar-3.jpg')}}" alt="contact-img" title="contact-img" class="rounded-circle avatar-sm" />
                                         </td>
                                         <td>
                                             <h5 class="m-0 font-weight-medium">Erwin E. Brown</h5>
@@ -196,7 +196,7 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <img src="assets/images/users/avatar-4.jpg" alt="contact-img" title="contact-img" class="rounded-circle avatar-sm" />
+                                            <img src="{{asset('assets/images/users/avatar-4.jpg')}}" alt="contact-img" title="contact-img" class="rounded-circle avatar-sm" />
                                         </td>
                                         <td>
                                             <h5 class="m-0 font-weight-medium">Margeret V. Ligon</h5>
@@ -217,7 +217,7 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <img src="assets/images/users/avatar-5.jpg" alt="contact-img" title="contact-img" class="rounded-circle avatar-sm" />
+                                            <img src="{{asset('assets/images/users/avatar-5.jpg')}}" alt="contact-img" title="contact-img" class="rounded-circle avatar-sm" />
                                         </td>
                                         <td>
                                             <h5 class="m-0 font-weight-medium">Jose D. Delacruz</h5>
@@ -238,7 +238,7 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <img src="assets/images/users/avatar-8.jpg" alt="contact-img" title="contact-img" class="rounded-circle avatar-sm" />
+                                            <img src="{{asset('assets/images/users/avatar-8.jpg')}}" alt="contact-img" title="contact-img" class="rounded-circle avatar-sm" />
                                         </td>
                                         <td>
                                             <h5 class="m-0 font-weight-medium">Luke J. Sain</h5>

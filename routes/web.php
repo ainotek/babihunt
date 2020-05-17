@@ -14,15 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {return redirect()->route('dashboard');});
+Route::get('/', function () {return redirect()->route('dashboard');})->name('home');
 Route::get('login', 'AuthenticationController@login')->name('login');
 Route::any('logout', 'AuthenticationController@logout')->name('logout');
 Route::post('login', 'AuthenticationController@authentication')->name('authentication');
 
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('dashboard', function () {
-        return view('pages.dashboard');
-    })->name('dashboard');
-
+    Route::get('dashboard','DashboardController@home')->name('dashboard');
+    Route::get('quizzes','QuizController@index')->name('quizzes.index');
+    Route::get('category','CategoryController@categoryIndex')->name('categories.index');
+    Route::get('users','UserController@userIndex')->name('users.index');
+    Route::get('/users/profile','UserController@userProfile')->name('users.profile');
+    Route::get('admins','AdminController@adminIndex')->name('admins.index');
 });
 
