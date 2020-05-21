@@ -15,9 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {return redirect()->route('dashboard');})->name('home');
-Route::get('login', 'AuthenticationController@login')->name('login');
-Route::any('logout', 'AuthenticationController@logout')->name('logout');
-Route::post('login', 'AuthenticationController@authentication')->name('authentication');
+Route::group(['middleware' => ['guest']], function () {
+    Route::get('login', 'AuthenticationController@login')->name('login');
+    Route::any('logout', 'AuthenticationController@logout')->name('logout');
+    Route::post('login', 'AuthenticationController@authentication')->name('authentication');
+});
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('dashboard','DashboardController@home')->name('dashboard');
@@ -26,5 +28,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('users','UserController@userIndex')->name('users.index');
     Route::get('/users/profile','UserController@userProfile')->name('users.profile');
     Route::get('admins','AdminController@adminIndex')->name('admins.index');
+    Route::resource('country','AdminController');
 });
 

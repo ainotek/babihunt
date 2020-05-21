@@ -6,6 +6,7 @@ use App\Models\Admin;
 use App\Models\Password_reset;
 use App\Models\User;
 use App\Services\AuthenticationService;
+use Faker\Generator as Faker;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -18,8 +19,24 @@ use App\Helpers\Helpers;
 class AuthenticationController extends Controller
 {
 
-    public function login(Request $request)
+    public function login(Request $request, Faker $faker)
     {
+       $date = $faker->date('Y/m/d', '-16 years');
+        dd($date);
+        $roles = ['ADMIN', 'SUPERVISOR', 'SUPERADMIN'];
+        $response = [];
+        foreach ($roles as $role) {
+            $row = [
+                'name' => $role,
+                'description' => 'ff'
+            ];
+            array_push(
+                $response
+                , $row
+            );
+        }
+        dd($response); ;
+
         return view('authentication.login');
     }
 
