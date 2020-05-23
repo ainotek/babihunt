@@ -12,9 +12,6 @@ class RoleSeeder extends Seeder
      */
     public function run()
     {
-        $roles = ['ADMIN', 'SUPERVISOR', 'SUPERADMIN'];
-        foreach ($roles as $role){
-            factory(Role::class)->make(['name' => $role]);
-        }
+        factory(Role::class)->create();
     }
 }

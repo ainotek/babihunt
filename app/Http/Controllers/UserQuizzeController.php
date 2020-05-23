@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\UserQuizze;
+use App\Models\UserQuiz;
 use Illuminate\Http\Request;
 
 class UserQuizzeController extends Controller
@@ -31,10 +31,10 @@ class UserQuizzeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\UserQuizze  $userQuizze
+     * @param  \App\Models\UserQuiz  $userQuizze
      * @return \Illuminate\Http\Response
      */
-    public function show(UserQuizze $userQuizze)
+    public function show(UserQuiz $userQuizze)
     {
         //
     }
@@ -43,10 +43,10 @@ class UserQuizzeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\UserQuizze  $userQuizze
+     * @param  \App\Models\UserQuiz  $userQuizze
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, UserQuizze $userQuizze)
+    public function update(Request $request, UserQuiz $userQuizze)
     {
         //
     }
@@ -54,10 +54,10 @@ class UserQuizzeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\UserQuizze  $userQuizze
+     * @param  \App\Models\UserQuiz  $userQuizze
      * @return \Illuminate\Http\Response
      */
-    public function destroy(UserQuizze $userQuizze)
+    public function destroy(UserQuiz $userQuizze)
     {
         //
     }

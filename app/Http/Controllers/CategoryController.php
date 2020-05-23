@@ -12,9 +12,9 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function categoryIndex()
     {
-        //
+        return view('pages.categoriesIndex');
     }
 
     /**

@@ -11,6 +11,6 @@ class PasswordResetSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(\App\Models\PasswordReset::class, 1)->create();
     }
 }

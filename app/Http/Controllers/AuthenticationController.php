@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Models\Country;
 use App\Models\Password_reset;
 use App\Models\User;
 use App\Services\AuthenticationService;
@@ -21,22 +22,10 @@ class AuthenticationController extends Controller
 
     public function login(Request $request, Faker $faker)
     {
-       $date = $faker->date('Y/m/d', '-16 years');
-        dd($date);
-        $roles = ['ADMIN', 'SUPERVISOR', 'SUPERADMIN'];
-        $response = [];
-        foreach ($roles as $role) {
-            $row = [
-                'name' => $role,
-                'description' => 'ff'
-            ];
-            array_push(
-                $response
-                , $row
-            );
-        }
-        dd($response); ;
+        $country = Country::first()->pluck('id')[0];
 
+        $date = (String) $faker->dateTimeBetween('-1month', '+8month')->format('Y/m/d H:i:s');
+        //dd($country);
         return view('authentication.login');
     }
 

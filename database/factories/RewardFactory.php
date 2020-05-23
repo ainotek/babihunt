@@ -7,6 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Reward::class, function (Faker $faker) {
     return [
-        //
+        'label'=> $faker->word,
+        'description'=> $faker->sentence,
     ];
 });

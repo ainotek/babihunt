@@ -6,8 +6,15 @@ use App\Models\Role;
 use Faker\Generator as Faker;
 
 $factory->define(Role::class, function (Faker $faker) {
+    $roles = ['ADMIN', 'SUPERVISOR', 'SUPERADMIN'];
+    foreach ($roles as $role) {
+        Role::create([
+            'name' => $role,
+            'description' => $role,
+        ]);
+    }
     return [
-        'name' => 'ADMIN',
-        'description' => $faker->text,
+        'name' => 'SUPPORT',
+        'description' => 'SUPPORT',
     ];
 });

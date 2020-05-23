@@ -11,6 +11,6 @@ class UserRewardSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(\App\Models\UserReward::class, 80)->create();
     }
 }

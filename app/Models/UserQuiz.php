@@ -4,7 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Relations\Pivot;
 
-class UserQuizze extends Pivot
+class UserQuiz extends Pivot
 {
-    //
+    protected $table = 'user_quizzes';
+
 }

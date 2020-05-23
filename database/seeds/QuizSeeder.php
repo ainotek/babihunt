@@ -11,6 +11,6 @@ class QuizSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(\App\Models\Quiz::class, 4)->create();
     }
 }

@@ -11,6 +11,6 @@ class RewardSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(\App\Models\Reward::class, 12)->create();
     }
 }

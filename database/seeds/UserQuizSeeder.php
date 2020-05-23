@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class UserQuizzeSeeder extends Seeder
+class UserQuizSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +11,6 @@ class UserQuizzeSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(\App\Models\UserQuiz::class, 80)->create();
     }
 }
